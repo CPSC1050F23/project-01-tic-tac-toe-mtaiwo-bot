@@ -1,0 +1,5 @@
+
+def play():
+    pass
+
+play()
