@@ -1,0 +1,83 @@
+"""
+Author: Folu Taiwo
+Psuedocode partner: Tori Fazio
+Date: 10/4/2023
+Assignment: tic tac toe
+Course: CPSC1050
+
+Start with empty 3x3 board (2d list)
+
+
+print("Let's play Tic-Tac-Toe!")
+print("When prompted, enter desired row and column numbers")
+print("Example: 1 3")
+# 2-D array set up with x in spot (1,3)
+
+print("lets's Play")
+print("Player X starts")
+
+#Empty board
+
+The max spots are 9 so a game can only last at max 9 rounds with player x starting and ending
+for range(4):
+    x goes 
+        Enter row and column for player X
+        x= int
+        y = int
+        while x and y are not 1-3
+            Please enter valid row and col numbers from 1 to 3:
+            if x and y are 1-3
+            break
+        print board with x in spot (x,y)
+        turn += 1
+        #Check if x won
+            break
+
+    O goes 
+        Enter row and column for player O
+        x= int
+        y = int
+        while x and y are not 1-3
+            Please enter valid row and col numbers from 1 to 3:
+            if x and y are 1-3
+                break
+        print board with o in spot (x,y)
+        turn += 1
+        #Check if O won
+            break
+
+if win = False and turn < 9:
+    Enter row and column for player X
+        x= int
+        y = int
+        while x and y are not 1-3
+            Please enter valid row and col numbers from 1 to 3:
+            if x and y are 1-3
+            break
+        print board with x in spot (x,y)
+        turn += 1
+        #Check if x won
+        #Check if tie 
+            if turn = 9 and win = false
+
+
+print("Do you want to play again? Y or N")
+user_input = input().lower()
+while user_input != 'y' oor user_input != 'n':
+    Please enter valid input: Y or N
+    user_input = input().lower()
+    if user_input == 'y' or user_input == 'n':
+        break
+if user_input == 'y':
+    continue()
+if user_input = 'n':
+    exit()
+
+Check function
+    function for row
+    function for column
+    function for diagonal
+
+            
+
+
