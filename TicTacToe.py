@@ -72,7 +72,7 @@ def start_game():
     update_board(board,0,2,'X')
     print_board(board)
     print()
-    print("Lets's Play!")
+    print("Let's play!")
     print("Player X starts!")
 
 def check_tie(board):
@@ -112,7 +112,7 @@ def play_again():
             print("Let's play Tic-Tac-Toe!")
             print("When prompted, enter desired row and column numbers")
             print()
-            print("Lets's Play!")
+            print("Let's play!")
             print("Player X starts!")
             print()
             play()
