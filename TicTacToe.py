@@ -32,13 +32,13 @@ def print_board(board):
 
 
 def update_board(board, row, col, player):
-    if board[row][col] == "":
-        board[row][col] = player
-    else:
+    while board[row][col] != "":
         print("That spot is full!")
         print(f"Enter row and column for player {player}")
-        get_move(player)
-
+        row, col = get_move(player)
+    
+    board[row][col] = player
+    
 def get_move(player):
     while True:
         move = input()
@@ -60,6 +60,7 @@ def get_move(player):
         
 def player_move(board, player):
     while True:
+        row, col = get_move(player)
         if 0 <= row <= 2 and 0 <= col <= 2 and board[row][col] == "":
             board[row][col] = player
             break
