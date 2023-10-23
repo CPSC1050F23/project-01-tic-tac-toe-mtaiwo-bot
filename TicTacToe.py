@@ -6,12 +6,14 @@ Assignment: tic tac toe
 Course: CPSC1050
 
 """
+#initialize tic tac toe board 
 def init_board():
     board = [['' for i in range(3)] for j in range(3)]
     return board
 
 board = init_board()
 
+#print board 
 def print_board(board):
     # create a string
     output_string = ""
@@ -30,7 +32,7 @@ def print_board(board):
     #return the formatted 2d list as a string
     print(output_string)
 
-
+#update board after getting player move
 def update_board(board, row, col, player):
     while board[row][col] != "":
         print("That spot is full!")
@@ -39,6 +41,7 @@ def update_board(board, row, col, player):
     
     board[row][col] = player
 
+#get row and col move from player
 def get_move(player):
     while True:
         move = input()
@@ -57,7 +60,7 @@ def get_move(player):
             return row, col
         else:
             print("Please enter valid row and col numbers from 1 to 3:")
-        
+              
 def player_move(board, player):
     while True:
         row, col = get_move(player)
@@ -65,6 +68,7 @@ def player_move(board, player):
             board[row][col] = player
             break
 
+#print example of tic tac toe and start game
 def start_game():
     print("Let's play Tic-Tac-Toe!")
     print("When prompted, enter desired row and column numbers")
@@ -76,12 +80,14 @@ def start_game():
     print("Let's play!")
     print("Player X starts!")
 
+#check for tie 
 def check_tie(board):
     for row in board:
         if "" in row:
             return False
     return True
 
+#check for win
 def check_win(board, player):
     #Check rows
     for row in board:
@@ -99,26 +105,20 @@ def check_win(board, player):
 
     return False
 
+#check if board is completely full
 def check_complete(board):
     for row in board:
         if "" in row:
             return False
     return True
 
+#ask player if they want to play again
 def play_again():
     while True:
         print("Do you want to play again? Y or N")
         response = input().lower().strip()
         if response in 'y':
-            print("Let's play Tic-Tac-Toe!")
-            print("When prompted, enter desired row and column numbers")
-            print("Example: 1 3")
-            print()
-            update_board(board,0,2,'X')
-            print_board(board)
-            print()
-            print("Let's play!")
-            print("Player X starts!")
+            start_game()
             print()
             play()
         elif response in 'n':
@@ -126,6 +126,7 @@ def play_again():
         else:
             print("Please enter valid input: Y or N")
 
+#get players to play game 
 def play():
     board = init_board()
     print_board(board)
@@ -158,7 +159,20 @@ def play():
         if play_again():
             return       
 
-
+#play tic tac toe 
 start_game()
 print()
 play()
+"""
+print("Let's play Tic-Tac-Toe!")
+            print("When prompted, enter desired row and column numbers")
+            print("Example: 1 3")
+            print()
+            update_board(board,0,2,'X')
+            print_board(board)
+            print()
+            print("Let's play!")
+            print("Player X starts!")
+            print()
+            play()
+            """
