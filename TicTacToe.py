@@ -44,20 +44,20 @@ def get_move(player):
         move = input()
         move = move.split()
         
+        if not all(char.isdigit() or char.isspace() for char in move):
+            print("Please enter valid row and col numbers from 1 to 3:")
+            continue
+
         if len(move) != 2:
             print("Please enter valid row and col numbers from 1 to 3:")
             continue
         
-        try:
-            row = int(move[0])
-            col = int(move[1])
-            if 0 <= row <= 2 and 0 <= col <= 2:
-                return row, col
-            else:
-                print("Please enter valid row and col numbers from 1 to 3:")
-        except ValueError:
+        row, col = int(move[0]) - 1, int(move[1]) - 1
+        if 0 <= row <= 2 and 0 <= col <= 2:
+            return row, col
+        else:
             print("Please enter valid row and col numbers from 1 to 3:")
-            
+        
 def player_move(board, player):
     while True:
         if 0 <= row <= 2 and 0 <= col <= 2 and board[row][col] == "":
