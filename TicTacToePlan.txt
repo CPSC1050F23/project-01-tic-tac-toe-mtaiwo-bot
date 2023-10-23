@@ -77,7 +77,6 @@ Check function
     function for row
     function for column
     function for diagonal
-
-            
+    
 
 

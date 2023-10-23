@@ -107,43 +107,56 @@ def check_complete(board):
 
 def play_again():
     while True:
-        response = input("Do you want to play again? Y or N: ").lower().strip()
-        if response == 'y':
-            return True
-        elif response == 'n':
+        print("Do you want to play again? Y or N")
+        response = input().lower().strip()
+        if response in 'y':
+            print("Let's play Tic-Tac-Toe!")
+            print("When prompted, enter desired row and column numbers")
+            print("Example: 1 3")
+            print()
+            update_board(board,0,2,'X')
+            print_board(board)
+            print()
+            print("Let's play!")
+            print("Player X starts!")
+            print()
+            play()
+        elif response in 'n':
             exit(0)
         else:
             print("Please enter valid input: Y or N")
 
 def play():
+    board = init_board()
+    print_board(board)
     while True:
-        board = init_board()
-        print_board(board)
-        while True:
-            player = 'X'
+        player = 'X'
 
-            for i in range(9):
-                print(f"Enter row and column for player {player}")
-                row, col = get_move(player)
-                update_board(board, row, col, player)
-                print()
-                print_board(board)
+        for i in range(9):
+            print(f"Enter row and column for player {player}")
+            row, col = get_move(player)
+            update_board(board, row, col, player)
+            print()
+            print_board(board)
 
-                if check_tie(board):
-                    print("It's a TIE!")
-                    if play_again():
-                        break
-                    else:
-                        exit(0)
-                    
-                if check_win(board, player):
-                    print(f"Player {player} WINS!")
-                    if play_again():
-                        break
-                    else:
-                        exit(0)
+            if check_tie(board):
+                print("It's a TIE!")
+                play_again()
+                
+            if check_win(board, 'X'):
+                print("Player X WINS!")
+                play_again()
+            elif check_win(board, 'O'):
+                print("Player O WINS!")
+                play_again()
+            
+            if check_complete(board):
+                play_again()
 
-                player = 'O' if player == 'X' else 'X'
+            player = 'O' if player == 'X' else 'X'
+        
+        if play_again():
+            return       
 
 
 start_game()
