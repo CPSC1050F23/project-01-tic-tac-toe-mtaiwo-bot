@@ -118,9 +118,19 @@ def play_again():
         print("Do you want to play again? Y or N")
         response = input().lower().strip()
         if response in 'y':
-            start_game()
+            print("Let's play Tic-Tac-Toe!")
+            print("When prompted, enter desired row and column numbers")
+            print("Example: 1 3")
+            print()
+            board = init_board()
+            update_board(board,0,2,'X')
+            print_board(board)
+            print()
+            print("Let's play!")
+            print("Player X starts!")
             print()
             play()
+            return True
         elif response in 'n':
             exit(0)
         else:
@@ -129,8 +139,8 @@ def play_again():
 #get players to play game 
 def play():
     board = init_board()
-    print_board(board)
     while True:
+        print_board(board)
         player = 'X'
 
         for i in range(9):
@@ -163,16 +173,3 @@ def play():
 start_game()
 print()
 play()
-"""
-print("Let's play Tic-Tac-Toe!")
-            print("When prompted, enter desired row and column numbers")
-            print("Example: 1 3")
-            print()
-            update_board(board,0,2,'X')
-            print_board(board)
-            print()
-            print("Let's play!")
-            print("Player X starts!")
-            print()
-            play()
-            """
