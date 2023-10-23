@@ -35,10 +35,9 @@ def update_board(board, row, col, player):
     if board[row][col] == "":
         board[row][col] = player
     else:
-        print(f"Enter row and column for player {player}")
         print("That spot is full!")
         print(f"Enter row and column for player {player}")
-        return
+        get_move(player)
 
 def get_move(player):
     while True:
