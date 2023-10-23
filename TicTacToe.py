@@ -36,7 +36,6 @@ def update_board(board, row, col, player):
         board[row][col] = player
     else:
         print("That spot is full!")
-        print(f"Enter row and column for player {player}")
         return
 
 def get_move(player):
@@ -157,7 +156,7 @@ def play():
         
         if play_again():
             return
-        
+
 start_game()
 print()
 play()
