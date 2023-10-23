@@ -37,6 +37,7 @@ def update_board(board, row, col, player):
     else:
         print("That spot is full!")
         print(f"Enter row and column for player {player}")
+        return
 
 def get_move(player):
     while True:
@@ -155,9 +156,8 @@ def play():
             player = 'O' if player == 'X' else 'X'
         
         if play_again():
-            print("Let's play Tic-Tac-Toe!")
-            print("When prompted, enter desired row and column numbers")
-
+            return
+        
 start_game()
 print()
 play()
